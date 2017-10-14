@@ -1,5 +1,5 @@
 const server = require('./server/server');
-const db =require('../db');
+const db =require('../../db/index');
 
 const PORT = process.env.PORT || 8000;
 

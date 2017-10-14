@@ -4,13 +4,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import { Provider } from 'react-redux';
-
-
-const store = {a: 1};
-
+import srore from './store';
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={srore}>
         <App/>
     </Provider>,
     document.getElementById('root')
