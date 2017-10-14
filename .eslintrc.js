@@ -11,7 +11,7 @@ module.exports = {
         },
         "sourceType": "module"
     },
-
+    "parser": "babel-eslint",
     "rules": {
     "comma-dangle": 1,
         "no-cond-assign": 1,
