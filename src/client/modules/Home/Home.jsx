@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Button} from '../../common/Button/Button';
-import './home.scss';
+
+import * as style from './home.scss';
 
 export function Home(props) {
     return (
-        <main className="home">
-            <Button className="countButton" onClick={props.onDectButton}>-</Button>
-            <div className="count">
+        <main className={style.home}>
+            <Button className={style.countButton} onClick={props.onDectButton}>-</Button>
+            <div className={style.count}>
                 {props.count}
             </div>
-            <Button className="countButton" onClick={props.onIncrButton}>+</Button>
+            <Button className={style.countButton} onClick={props.onIncrButton}>+</Button>
         </main>
     );
 }

@@ -1,6 +1,6 @@
 const path = require('path');
-require('csscomb');
-    require('./.csscomb.json')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: './src/client/index.jsx',
 
@@ -36,11 +36,29 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss?$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            query: {
+                                modules: true,
+                                sourceMap: true,
+                                importLoaders: 2,
+                                localIdentName: '[name]__[local]___[hash:base64:5]'
+                            }
+                        },
+                        'sass-loader'
+                    ]
+                }),
+                exclude: /node_modules/,
             }
         ]
     },
+    plugins: [
+        new ExtractTextPlugin('style.css')
+    ],
     devServer: {
         proxy: {
             '/api': 'http://localhost:8000'

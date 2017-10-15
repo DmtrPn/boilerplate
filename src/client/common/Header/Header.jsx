@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './header.scss';
+import * as style from './header.scss';
 import {Button} from '../Button';
 
 export function Header() {
     return (
-        <div className="header">
+        <div className={style.header}>
             <NavLink to='/'>
-                <Button className="headerButton">Home</Button>
+                <Button className={style.headerButton}>Home</Button>
             </NavLink>
             <NavLink to='/about'>
-                <Button className="headerButton">About</Button>
+                <Button className={style.headerButton}>About</Button>
             </NavLink>
         </div>
     );
