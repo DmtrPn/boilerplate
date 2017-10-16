@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: './src/client/index.jsx',
@@ -53,6 +54,38 @@ module.exports = {
                     ]
                 }),
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: "babel-loader"
+                    },
+                    {
+                        loader: "react-svg-loader",
+                        options: {
+                            jsx: true, // true outputs JSX tags
+                            svgo: {
+                                plugins: [
+                                    { removeTitle: false }
+                                ],
+                                floatPrecision: 2
+                            },
+
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(gif|png|jpg|jpeg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'assets/[name].[ext]'
+                        }
+                    }
+                ],
             }
         ]
     },
