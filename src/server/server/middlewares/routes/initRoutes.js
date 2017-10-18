@@ -1,5 +1,5 @@
-const exampleRoutes = require('../../../modules/example/routes');
+import exampleRoutes from '../../../modules/example/routes';
 
-module.exports = initRoutes = function (app) {
+export const initRoutes = function(app) {
     app.use(exampleRoutes);
 };

@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('./index')
 
 const seedProducts = () => db.Promise.map([
   {title: 'Hats',category: ['Clothes','Accessories'], current_price: 16, description: 'Fedora with a feather', availability: true, inventory: 100, promo_id: 1},

@@ -1,10 +1,8 @@
-const ExampleService = require('../services/exampleService');
+import {ExampleService} from '../services/exampleService';
 
-class ExampleController {
+export class ExampleController {
     actionGetApi(req, res) {
         const result = ExampleService.getApiText();
         res.send(result);
     }
 }
-
-module.exports = ExampleController;

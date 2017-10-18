@@ -1,11 +1,11 @@
-const express = require('express');
-const ExampleController = require('./controllers/exampleController');
+import express from 'express';
+import {ExampleController} from './controllers/exampleController';
 
-const routes = express.Router();
+const exampleRoutes = express.Router();
 
 const exampleController = new ExampleController();
 
-routes.get('/api/', exampleController.actionGetApi);
+exampleRoutes.get('/api/', exampleController.actionGetApi);
 
-module.exports = routes;
+export default exampleRoutes;
 
