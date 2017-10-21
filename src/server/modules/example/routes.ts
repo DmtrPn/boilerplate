@@ -1,4 +1,4 @@
-import express from 'express';
+import * as express from 'express';
 import {ExampleController} from './controllers/exampleController';
 
 const exampleRoutes = express.Router();

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Header} from './common/Header';
 import {About} from './modules/About';
-import {Home} from './modules/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {HomeContainer} from './modules/Home/HomeContainer';
 

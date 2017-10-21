@@ -1,8 +1,8 @@
 import {ExampleService} from '../services/exampleService';
 
 export class ExampleController {
-    actionGetApi(req, res) {
-        const result = ExampleService.getApiText();
+    async actionGetApi(req, res) {
+        const result = await ExampleService.getApiText();
         res.send(result);
     }
 }

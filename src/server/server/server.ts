@@ -1,6 +1,6 @@
-import express from 'express';
-import path from 'path';
-import bodyParser from 'body-parser';
+import * as express from 'express';
+import * as path from 'path';
+import * as bodyParser from 'body-parser';
 
 import logger from './middlewares/logging/logging';
 import {initRoutes} from './middlewares/routes/initRoutes';
