@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Home} from './Home';
-import {increment, decrement} from '../../store/counter/actions/index';
+import { Home } from './Home';
+import { increment, decrement } from '../../store/counter/actions';
 
 @connect(mapStateToProps, mapDispatchToProps)
 class HomeContainer extends React.Component {
@@ -16,7 +16,7 @@ class HomeContainer extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        count: state.counter
+        count: state.counterStore.counter
     };
 }
 
@@ -27,4 +27,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export {HomeContainer};
+export { HomeContainer };

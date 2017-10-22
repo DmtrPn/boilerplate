@@ -1,6 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+// const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     entry: './src/client/index.jsx',
@@ -23,11 +23,15 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             cacheDirectory: true,
+                            presets: ['es2015', 'react'],
                             plugins: [
-                                'transform-decorators-legacy',
-                                'transform-class-properties'
+                                "transform-decorators-legacy",
+                                ["transform-async-to-module-method", {
+                                    "module": "bluebird",
+                                    "method": "coroutine"
+                                }]
                             ],
-                            presets: ['es2015', 'stage-0', 'react']
+
 
                         }
                     },

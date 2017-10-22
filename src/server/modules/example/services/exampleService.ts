@@ -4,7 +4,10 @@ import {getCollection} from '../../../db/mongodb/index';
 export class ExampleService {
     static async getApiText() {
         const db = getCollection('test');
-        const result = await db.find({}, {values: 0}).toArray();
-        return result;
+        const testData = await db.find({}, {_id: 0}).toArray();
+        return testData.reduce((acc, data) => {
+            acc.push(`${data.name} ${data.age}`);
+            return acc;
+        }, []);
     }
 }

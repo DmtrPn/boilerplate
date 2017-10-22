@@ -1,5 +1,5 @@
 import { handleActions, combineActions } from 'redux-actions';
-import {increment, decrement} from '../actions/index';
+import { increment, decrement } from '../actions';
 const defaultState = { counter: 10 };
 
 const reducer = handleActions({
@@ -9,7 +9,5 @@ const reducer = handleActions({
 function changeCount(state, { payload: { amount } }) {
     return { ...state, counter: state.counter + amount};
 }
-
-
 
 export default reducer;
