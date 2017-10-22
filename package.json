@@ -7,7 +7,8 @@
     "build": "webpack",
     "build-server": "./node_modules/.bin/gulp",
     "server-dev": "NODE_ENV=development node-dev ./dist/app",
-    "start-dev": "NODE_ENV=development webpack-dev-server --inline --hot --content-base ./public"
+    "start-dev": "NODE_ENV=development webpack-dev-server --inline --hot --content-base ./public",
+    "init-data": "node ./mongo-migrations/addData.js"
   },
   "repository": {
     "type": "git",
