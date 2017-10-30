@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
+
 import { TestApi } from '../../Api/TestApi';
 import { About } from './About';
 import { getData } from '../../store/testData/actions';

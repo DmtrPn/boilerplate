@@ -1,23 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { Button } from '../../common/Button';
 
 import * as style from './home.scss';
 
-export function Home(props) {
+Home.propTypes = {
+    count: PropTypes.number.isRequired,
+    onDecButton: PropTypes.func.isRequired,
+    onIncButton: PropTypes.func.isRequired
+};
+
+export function Home({count, onDecButton, onIncButton}) {
     return (
         <main className={style.home}>
-            <Button className={style.countButton} onClick={props.onDectButton}>-</Button>
+            <Button
+                className={style.countButton}
+                onClick={onDecButton}
+            >
+                -
+            </Button>
             <div className={style.count}>
-                {props.count}
+                {count}
             </div>
-            <Button className={style.countButton} onClick={props.onIncrButton}>+</Button>
+            <Button
+                className={style.countButton}
+                onClick={onIncButton}
+            >
+                +
+            </Button>
         </main>
     );
 }
-
-Home.propTypes = {
-    count: PropTypes.number.isRequired,
-    onDectButton: PropTypes.func.isRequired,
-    onIncrButton: PropTypes.func.isRequired
-};

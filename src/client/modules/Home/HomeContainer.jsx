@@ -22,8 +22,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onIncrButton: () => dispatch(increment(2)),
-        onDectButton: () => dispatch(decrement(1))
+        onIncButton: () => dispatch(increment(2)),
+        onDecButton: () => dispatch(decrement(1))
     };
 }
 
